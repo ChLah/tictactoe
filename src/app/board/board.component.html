@@ -1,0 +1,18 @@
+<div class="row" *ngIf="stateService.state$ | async as state" [style.--col-count]="state.size">
+    <h1>Tic-Tac-Toe</h1>
+
+    <div class="tiles-grid">
+        <app-tile
+            *ngFor="let tile of state.tiles; let idx = index; trackBy: trackByIdx"
+            (clicked)="stateService.tryMakeMove(idx)"
+            [value]="tile"
+        ></app-tile>
+    </div>
+
+    <h3 *ngIf="!state.isGameOver">Player {{state.curPlayer}}'s turn</h3>
+    <h3 *ngIf="state.winner">Player {{state.winner}} has won the game!</h3>
+    <h3 *ngIf="state.isGameOver && !state.winner">The game ended with a draw</h3>
+
+    <button (click)="stateService.restart()">New game</button>
+</div>
+

@@ -1,0 +1,17 @@
+:host {
+    --col-count: 3;
+    --elem-size: 60px;
+}
+
+.row {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--col-count), var(--elem-size));
+    grid-template-rows: repeat(var(--col-count), var(--elem-size));
+    gap: .2rem;
+}
