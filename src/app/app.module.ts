@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
@@ -8,6 +9,7 @@ import {
   NbCardModule,
   NbIconModule,
   NbLayoutModule,
+  NbSelectModule,
   NbThemeModule,
 } from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,12 +23,14 @@ import { TileComponent } from './tile/tile.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbButtonModule,
     NbIconModule,
     NbCardModule,
+    NbSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
