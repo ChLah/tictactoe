@@ -1,1 +1,7 @@
-<button (click)="onClicked()">{{value === 'empty' ? '' : value}}</button>
+<button nbButton 
+    size="giant"
+    [status]="effectiveStatus" 
+    (click)="onClicked()"
+>
+    {{value === 'empty' ? '' : value}}
+</button>

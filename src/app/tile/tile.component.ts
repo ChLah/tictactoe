@@ -5,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { NbComponentOrCustomStatus } from '@nebular/theme';
 import { TileValue } from '../board/board-state.service';
 
 @Component({
@@ -19,6 +20,14 @@ export class TileComponent {
 
   @Output()
   clicked = new EventEmitter();
+
+  get effectiveStatus(): NbComponentOrCustomStatus {
+    if (this.value === 'empty') {
+      return 'basic';
+    }
+
+    return this.value === 'X' ? 'primary' : 'success';
+  }
 
   onClicked = () => this.clicked.emit();
 }

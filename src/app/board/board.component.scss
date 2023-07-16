@@ -1,6 +1,6 @@
 :host {
     --col-count: 3;
-    --elem-size: 60px;
+    --elem-size: 70px;
 }
 
 .row {
@@ -9,9 +9,30 @@
     padding: 1rem;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .tiles-grid {
     display: grid;
     grid-template-columns: repeat(var(--col-count), var(--elem-size));
     grid-template-rows: repeat(var(--col-count), var(--elem-size));
     gap: .2rem;
+}
+
+.infos {
+    --card-margin-bottom: 0;
+}
+
+@media (min-width: 700px) {
+    .container {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .tiles-grid {
+        --elem-size: 90px;
+    }
 }
