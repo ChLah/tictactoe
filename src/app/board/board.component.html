@@ -4,6 +4,7 @@
             *ngFor="let tile of state.tiles; let idx = index; trackBy: trackByIdx"
             (clicked)="stateService.tryMakeMove(idx)"
             [value]="tile"
+            [disabled]="state.isGameOver"
         ></app-tile>
     </div>
 

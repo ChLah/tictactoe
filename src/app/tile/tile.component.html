@@ -1,6 +1,7 @@
 <button nbButton 
     size="giant"
     [status]="effectiveStatus" 
+    [disabled]="disabled"
     (click)="onClicked()"
 >
     {{value === 'empty' ? '' : value}}

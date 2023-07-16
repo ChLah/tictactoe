@@ -18,6 +18,9 @@ export class TileComponent {
   @Input()
   value: TileValue = 'empty';
 
+  @Input()
+  disabled = false;
+
   @Output()
   clicked = new EventEmitter();
 
