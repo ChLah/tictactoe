@@ -49,7 +49,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/tictactoe"
+              "baseHref": "/tictactoe/"
             },
             "development": {
               "buildOptimizer": false,
