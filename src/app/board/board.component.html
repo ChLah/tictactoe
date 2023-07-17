@@ -45,7 +45,7 @@
                     </form>
                 </nb-card-body>
                 <nb-card-footer class="actions">
-                    <button nbButton outline status="primary" (click)="stateService.setSize(settingsForm.value.size!); rCard.revealed = false">
+                    <button nbButton outline status="primary" (click)="setSize(settingsForm.value.size!); rCard.revealed = false">
                         <nb-icon icon="save-outline"></nb-icon>
                         {{'BOARD.SETTINGS.SAVE' | translate}}
                     </button>
