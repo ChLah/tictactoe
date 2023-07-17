@@ -70,6 +70,12 @@ SOFTWARE.
 
 
 
+@ngx-translate/core
+MIT
+
+@ngx-translate/http-loader
+MIT
+
 eva-icons
 MIT
 
