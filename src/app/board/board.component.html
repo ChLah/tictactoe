@@ -12,16 +12,18 @@
     <nb-reveal-card [showToggleButton]="false" class="infos" #rCard>
         <nb-card-front>
             <nb-card accent="primary">
-                <nb-card-header>Current game</nb-card-header>
+                <nb-card-header>
+                    <h2 translate>BOARD.INFOS.HEADER</h2>
+                </nb-card-header>
                 <nb-card-body>
-                    <h3 *ngIf="!state.isGameOver">Player {{state.curPlayer}}'s turn</h3>
-                    <h3 *ngIf="state.winner">Player {{state.winner}} has won the game!</h3>
-                    <h3 *ngIf="state.isGameOver && !state.winner">The game ended with a draw</h3>
+                    <p *ngIf="!state.isGameOver" translate [translateParams]="{player: state.curPlayer}">BOARD.INFOS.CURPLAYER</p>
+                    <p *ngIf="state.winner" translate [translateParams]="{player: state.winner}">BOARD.INFOS.WINNER</p>
+                    <p *ngIf="state.isGameOver && !state.winner">BOARD.INFOS.DRAW</p>
                 </nb-card-body>
                 <nb-card-footer class="actions">
                     <button nbButton outline status="primary" (click)="stateService.restart()">
                         <nb-icon icon="play-circle-outline"></nb-icon>
-                        New game
+                        {{'BOARD.ACTIONS.RESTART' | translate}}
                     </button>
                     <button nbButton outline (click)="rCard.revealed = true">
                         <nb-icon icon="settings-outline"></nb-icon>
@@ -31,10 +33,13 @@
         </nb-card-front>
         <nb-card-back>
             <nb-card>
-                <nb-card-header>Einstellungen</nb-card-header>
+                <nb-card-header>
+                    <h2 translate>BOARD.SETTINGS.HEADER</h2>
+                </nb-card-header>
                 <nb-card-body>
                     <form [formGroup]="settingsForm">
-                        <nb-select placeholder="Größe" formControlName="size">
+                        <label for="size" translate>BOARD.SETTINGS.SIZE</label>
+                        <nb-select id="size" formControlName="size" fullWidth>
                             <nb-option *ngFor="let size of selectableSizes" [value]="size">{{size}} x {{size}}</nb-option>
                         </nb-select>
                     </form>
@@ -42,7 +47,7 @@
                 <nb-card-footer class="actions">
                     <button nbButton outline status="primary" (click)="stateService.setSize(settingsForm.value.size!); rCard.revealed = false">
                         <nb-icon icon="save-outline"></nb-icon>
-                        Speichern
+                        {{'BOARD.SETTINGS.SAVE' | translate}}
                     </button>
                     <button type="button" nbButton outline (click)="rCard.revealed = false">
                         <nb-icon icon="close-circle-outline"></nb-icon>

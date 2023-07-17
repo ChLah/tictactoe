@@ -1,0 +1,18 @@
+{
+    "BOARD": {
+        "INFOS": {
+            "HEADER": "Current game",
+            "CURPLAYER": "Player {{player}}'s turn",
+            "WINNER": "Player {{player}} has won!",
+            "DRAW": "The game ended with a draw"
+        },
+        "ACTIONS": {
+            "RESTART": "New game"
+        },
+        "SETTINGS": {
+            "HEADER": "Settings",
+            "SIZE": "Grid size",
+            "SAVE": "Save"
+        }
+    }
+}
