@@ -21,7 +21,7 @@ import { BoardComponent } from './board/board.component';
 import { TileComponent } from './tile/tile.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
