@@ -1,5 +1,7 @@
 # Tictactoe
 
+[![Pipeline status](https://github.com/ChLah/tictactoe/actions/workflows/deploy.yml/badge.svg)](https://github.com/ChLah/tictactoe/actions/workflows/deploy.yml)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
 ## Development server
