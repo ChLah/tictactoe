@@ -1,7 +1,16 @@
 <nb-layout>
 
-  <nb-layout-header fixed>
+  <nb-layout-header>
     <h1>Tic-Tac-Toe</h1>
+    <div class="fill"></div>
+    <div class="actions">
+      <button nbButton
+        *ngIf="curLang$ | async as lang"
+        (click)="setLang(lang === 'en' ? 'de' : 'en')"
+      >
+        {{lang}}
+      </button>
+    </div>
   </nb-layout-header>
 
   <nb-layout-column>
