@@ -80,7 +80,11 @@ export class BoardStateService {
     );
   }
 
-  private checkWinner(board: TileValue[], size: number): boolean {
+  public checkWinner(board: TileValue[], size: number): boolean {
+    if (board.length === 0) {
+      return false;
+    }
+
     const isWinningSegment = (arr: TileValue[]) =>
       arr.every((val) => val === arr[0] && arr[0] !== 'empty');
 
