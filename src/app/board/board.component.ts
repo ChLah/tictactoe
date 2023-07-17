@@ -4,6 +4,7 @@ import {
   TrackByFunction,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { SettingsService } from '../settings.service';
 import {
   BoardStateService,
   DEFAULT_SIZE,
@@ -18,7 +19,12 @@ import {
   providers: [BoardStateService],
 })
 export class BoardComponent {
-  constructor(public stateService: BoardStateService) {}
+  constructor(
+    public stateService: BoardStateService,
+    private settingsService: SettingsService
+  ) {
+    this.restoreSize();
+  }
 
   trackByIdx: TrackByFunction<TileValue> = (i, _) => i;
 
@@ -27,4 +33,15 @@ export class BoardComponent {
   });
 
   selectableSizes = Array.from({ length: 5 }).map((_, i) => i + 3);
+
+  setSize(size: number) {
+    this.stateService.setSize(size);
+    this.settingsService.setBoardSize(size);
+  }
+
+  restoreSize() {
+    const { boardSize } = this.settingsService.getSettings();
+    this.settingsForm.setValue({ size: boardSize });
+    this.stateService.setSize(boardSize);
+  }
 }
