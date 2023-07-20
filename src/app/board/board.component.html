@@ -18,7 +18,7 @@
                 <nb-card-body>
                     <p *ngIf="!state.isGameOver" translate [translateParams]="{player: state.curPlayer}">BOARD.INFOS.CURPLAYER</p>
                     <p *ngIf="state.winner" translate [translateParams]="{player: state.winner}">BOARD.INFOS.WINNER</p>
-                    <p *ngIf="state.isGameOver && !state.winner">BOARD.INFOS.DRAW</p>
+                    <p *ngIf="state.isGameOver && !state.winner" translate>BOARD.INFOS.DRAW</p>
                 </nb-card-body>
                 <nb-card-footer class="actions">
                     <button nbButton outline status="primary" (click)="stateService.restart()">
